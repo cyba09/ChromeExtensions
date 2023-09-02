@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "cookieSaver",
+  "short_name": "Simple",
+  "version": "1.0",
+  "description": "Saves Salvation Army cookies to MongoDB",
+  "author": "cyba09",
+  "homepage_url": "https://www.cybabots.com",
+  "icons": {
+    "16": "images/icon16.png",
+    "24": "images/icon24.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "96": "images/icon96.png",
+    "128": "images/icon128.png"
+  },
+  "default_locale": "en",
+  "action": {
+    "default_icon": {
+      "19": "images/icon19.png",
+      "38": "images/icon38.png"
+    },
+    "default_title": "__MSG_name__",
+    "default_popup": "popup.html"	
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://shopthesalvationarmy.com/"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'none'; style-src 'self'; media-src 'none'; child-src 'none'; connect-src https:; script-src 'self'; img-src 'self'; object-src 'none'",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+  },
+  "minimum_chrome_version": "103",
+  "offline_enabled": true,
+  "permissions": [ "activeTab", "tabs", "cookies", "notifications" ],
+  "host_permissions": [
+		"*://*/*"
+	]
+}

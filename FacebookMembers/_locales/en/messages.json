@@ -1,0 +1,4 @@
+{
+    "name": {"message": "Cookie"},
+    "description": {"message": "Save Salvation Army Cookies to MongoDB cluster"}
+}

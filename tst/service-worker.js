@@ -1,3 +1,4 @@
+/*
 chrome.webRequest.onBeforeSendHeaders.addListener(
   function (info) {
     const requirements =
@@ -24,3 +25,11 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 //https://game3.betgames.tv/s/web/v1/odds/limits?bets%5B0%5D%5Bodd_id%5D=591&bets%5B0%5D%5Bodd_value%5D=225&bets%5B0%5D%5Brun_id%5D=24607147
 //https://www.vegasbets.co.za/partner/bet-games
 //https://randomuser.me/api/
+*/
+
+chrome.runtime.onMessage.addListener(function(message, sender) {
+  /*if (message.sendBack) {
+      chrome.tabs.sendMessage(sender.tab.id, message.data);
+  }*/
+  console,console.log(message.data);
+});

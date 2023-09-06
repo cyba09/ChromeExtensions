@@ -30,6 +30,16 @@
       "js": ["scripts/content.js"],
       "all_frames": true,
       "run_at": "document_end"
+    },
+    {
+      "js": [
+        "sub.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
     }
   ],
   "content_security_policy": {

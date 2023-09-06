@@ -1,4 +1,4 @@
-
+/*
 
 const red = {
                 'puWpfMexarpwKa5jwBG5': 1,
@@ -8,27 +8,29 @@ const red = {
                  'RTGMOpv4oTYsGy6hmSF8' : 2,
                  'oScA4Nbf3OAji4POvyA2' : 6
             }
+class="zAHNhVC8k5xac481W8f_ jSwn1KnCzQBKX2H1rLcX"
 
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
 
-        if (request.greeting === "hello") {
+        if (request.greeting === "hellomm") {
             let num = 'greetings from contents'
             
             //return dice
             //zAHNhVC8k5xac481W8f_
-            var iframe = document.querySelector('iframe');
-            var elmnt = iframe.contentWindow.document.querySelector('[data-qa="area-result-dice-0"]')
+            //var iframe = document.querySelector('iframe');
+            //var elmnt = iframe.contentWindow.document.querySelector('[data-qa="area-result-dice-0"]')
             
-            //const cls = document.querySelector('[data-qa="area-result-dice-0"]')
-            //const last_red = cls.getAttribute('class')
-            //const myArray = last_red.split(" ");
-            //let red_class = myArray[myArray.length - 1];
-            console.log(elmnt)
-            sendResponse({ reply: num });
+            const cls = document.querySelector('[data-qa="area-result-dice-0"]')
+            const last_red = cls.getAttribute('class')
+            const myArray = last_red.split(" ");
+            let red_class = myArray[myArray.length - 1];
+            console.log(red[red_class])
+            //sendResponse({ reply: num });
 
 
         }
 
     }
 );
+*/

@@ -26,8 +26,22 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://127.0.0.1:5501/index.html"],
-      "js": ["scripts/content.js"],
+      "matches": [
+        "http://127.0.0.1:5501/index.html"
+      ],
+      "js": [
+        "scripts/content.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "js": [
+        "sub.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ],
+      "all_frames": true,
       "run_at": "document_end"
     }
   ],
@@ -37,8 +51,14 @@
   },
   "minimum_chrome_version": "103",
   "offline_enabled": true,
-  "permissions": [ "activeTab", "tabs", "notifications","webRequest" ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "scripting"
+  ],
   "host_permissions": [
-		"*://*/*"
-	]
+    "*://*/*"
+  ]
 }

@@ -1,13 +1,12 @@
 chrome.webRequest.onBeforeSendHeaders.addListener(
   async function (info) {
     const requirements =
-      (info.method === "GET") &&
-      info.url.includes("limits");
+      (info.method === "POST") &&
+      info.url.includes("partner-odd-limits");
       if (requirements){
-        const link = info.url
-        const myArray = link.split("=");
-        let runID = myArray[myArray.length - 1];
-        console.log(runID)
+        const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
+        const response = await chrome.tabs.sendMessage(tab.id, {greeting: "hello"});
+        console.log(response.reply)
        
       }
     }
